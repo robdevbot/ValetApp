@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2022-11-27 22:36:03
+  attendant: MyString
+  parking_spot: MyString
+  string: MyString
+
+two:
+  time: 2022-11-27 22:36:03
+  attendant: MyString
+  parking_spot: MyString
+  string: MyString
