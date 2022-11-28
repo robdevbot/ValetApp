@@ -1,1 +1,38 @@
-ParkDaCar
+<h1>ParkDaCar</h1>
+
+Start a new check-in
+
+<%= form_with url: "/check_in", method: :post do |form| %>
+  <%= form.label :vin, "VIN:" %>
+  <%= form.text_field :vin, :id => "#vin_field" %>
+  <br>
+  <%= form.label :year, "year:" %>
+  <%= form.text_field :year %>
+  <br>
+  <%= form.label :make, "make:" %>
+  <%= form.text_field :make %>
+  <br>
+  <%= form.label :model, "model:" %>
+  <%= form.text_field :model %>
+  <br>
+  <%= form.label :trim, "trim:" %>
+  <%= form.text_field :trim %>
+  <br>
+  <%= form.label :attendant_id, "attendant_id:" %>
+  <%= form.text_field :attendant_id %>
+  <br>
+  <%= form.label :parking_spot, "parking_spot:" %>
+  <%= form.text_field :parking_spot %>
+  <br>
+  <%= form.submit "Go" %>
+<% end %>
+
+<script type="text/javascript">
+  $('#vin_field').change(function(){
+    $.ajax({
+      url: "vehicles/get_info_from_vin",
+      type: "GET",
+      data: {'vin=' + $('#vin_field').value() },
+    })
+  });
+</script>

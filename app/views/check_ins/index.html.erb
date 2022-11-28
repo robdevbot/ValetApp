@@ -1,0 +1,22 @@
+<h1>All Check-ins</h1>
+
+<table>
+  <tr>
+    <th><h4>Parking Spot</h4></th>
+    <th><h4>Vehicle VIN</h4></th>
+    <th><h4>Make</h4></th>
+    <th><h4>Model</h4></th>
+    <th><h4>Owner</h4></th>
+  </tr>
+  <tr>
+  <% @check_ins.each do |check_in| %>
+    <th><%= check_in.parking_spot %></th>
+    <th><%= check_in.vehicle.vin %></th>
+    <th><%= check_in.vehicle.make %></th>
+    <th><%= check_in.vehicle.model %></th>
+    <th><%= check_in.owner %></th>
+  <% end %>
+  </tr>
+</table>
+
+

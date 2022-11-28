@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_27_223632) do
+ActiveRecord::Schema.define(version: 2022_11_28_062017) do
 
   create_table "attendants", force: :cascade do |t|
     t.string "name"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2022_11_27_223632) do
     t.string "string"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "vehicle"
     t.index ["attendant"], name: "index_check_ins_on_attendant"
+    t.index ["vehicle"], name: "index_check_ins_on_vehicle"
   end
 
   create_table "check_outs", force: :cascade do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2022_11_27_223632) do
     t.string "trim"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "checkedin"
   end
 
 end
